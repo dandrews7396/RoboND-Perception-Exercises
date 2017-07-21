@@ -29,9 +29,9 @@ passthrough = cloud_filtered.make_passthrough_filter()
 # Assign axis and range to the filter
 filter_axis = 'z'
 passthrough.set_filter_field_name(filter_axis)
-axis_min = 0.79   ## Course suggests 0.8, but this allows for 
+axis_min = 0.6    ## Course suggests 0.8, but this allows for 
 		  ## bottom of objects too
-axis_max = 2
+axis_max = 1.1 
 passthrough.set_filter_limits(axis_min,axis_max)
 
 # Save pcd for table
@@ -47,7 +47,7 @@ seg.set_model_type(pcl.SACMODEL_PLANE)
 seg.set_method_type(pcl.SAC_RANSAC)
 # Max Distance considered for a point fitting model, make smaller for greater
 # resolution
-max_distance = 0.000001
+max_distance = 0.0009
 seg.set_distance_threshold(max_distance) 
 
 # Extract inliers
