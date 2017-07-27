@@ -21,7 +21,7 @@ def color_hist(img, nbins=32, bins_range=(0, 256)):
     ## Compute the histogram of the HSV channels
     h_hist = np.histogram(hsvImg[:,:,0], bins=nbins, range=bins_range)
     s_hist = np.histogram(hsvImg[:,:,1], bins=nbins, range=bins_range)
-    v_hist = np.histogram(hsvImg[:,:,1], bins=nbins, range=bins_range)
+    v_hist = np.histogram(hsvImg[:,:,2], bins=nbins, range=bins_range)
     # Concatenate the histograms into a single feature vector
     features_hist = np.concatenate((h_hist[0], s_hist[0], v_hist[0]))
     # Normalize the result
